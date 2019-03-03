@@ -26,10 +26,36 @@ body {
 div.WikiDIV span {
 	display: none;
 }
+.facttable {
+  font-size: 1.5em;
+}
+.i {
+  font-style: italic;
+}
+
 .summarytable {
   font-size: 1.5em;
 }
-
+.summarytable td{
+  padding: 1px 5px 1px 5px;
+}
+.flagsmall {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px;
+  height: 50px;
+}
+.flagmedium {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 160px;
+}
+.flag {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px;
+}
 a:link {
   color: black;
 }
@@ -48,191 +74,6 @@ a:hover {
 a:active {
   color: blue;
 } 
-
-        /*table
-        {
-            border: 1px solid #222;
-            border-collapse: collapse;
-        }
-        table th, table td
-        {
-            padding: 5px;
-            border: 1px solid #222;
-        }*/
-        .noborder
-        {
-            border: 0px solid #222;
-            border-collapse: collapse;
-        }
-	/* for movable table */
-        .movable table
-        {
-            border: 1px solid #222;
-            border-collapse: collapse;
-        }
-        
-        table.movable th
-        {
-            background-color: #F7F7F7;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        table.movable th, table.movable td
-        {
-            /*width: 100px;*/
-            padding: 5px;
-            /*border: 2px solid #222;*/
-        }
-        .selected
-        {
-            background-color: #666;
-            color: #fff;
-        }
-		/*.winner  { background: #03fefa }*/
-		.winner  { background: #69c33f }
-		.loser { background: white }
-		/*.winner  { border: 5px solid #00f; }
-		.loser { border: 1px solid #222; }*/
-		.hide {display: none;}
-		.total {text-align:right;}
-		.wide {white-space: nowrap;}
-		.bigger {font-size: 1.5em;}
-		.win { background: #222;}
-		.tie { background: gray;}
-
-
-/* new stuff */
-
-header {
-    /*background-color: rgb(140, 193, 193);*/
-  background-color: #0055DD;
-  color: white;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  /*height: 40px;*/
-}
-
-    header > div#logo {
-        line-height: 40px;
-        position: relative;
-    }
-    
-    header > .menuDown {
-        box-shadow: 0 3px 5px rgba(0,0,0,.15);
-    }
-    
-    header > .menuUp {
-        box-shadow: none;
-    }
-    
-        header > div#logo > h1 {
-            color: white;
-            font-weight: 300;
-			padding-left: 80px;
-            /*text-transform: lowercase;*/
-        }
-        
-        header > div#logo > div#navToggle {
-            background-color: rgba(0,0,0,.15);
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition: 300ms all ease;
-        }
-            
-            header > div#logo > div#navToggle:hover {
-                background-color: rgba(0,0,0,.1);
-            }
-            
-            header > div#logo > div#navToggle > a {
-                color: rgba(255,255,255,.85);
-                display: block;
-                font-size: 0.85em;
-                font-weight: 600;
-                padding: 0 2.5rem;
-                text-decoration: none;
-                transition: 300ms all ease;
-            }
-            
-                header > div#logo > div#navToggle:hover > a {
-                    color: rgba(255,255,255,1);
-                }
-
-    header > nav {
-        background-color: white;
-        display: none;
-        flex: 1;
-        transform: 300ms all ease;
-    }
-    
-        header nav > ul {
-            list-style-type: none;    
-        }
-        
-            header nav > ul > li {
-                border-bottom: 1px dotted rgba(0,0,0,.1);
-                position: relative;
-            }
-            
-                header nav > ul > li:last-of-type {
-                    border-bottom: none;    
-                }
-            
-                header nav > ul > li > a {
-                    display: block;
-                    /*color: rgba(0,0,0,.65);*/
-                    color: white;
-                    font-weight: 700;
-                    padding: 1.5rem 0;
-                    text-decoration: none;
-                    transition: 250ms all ease;
-                }
-				
-					header nav > ul > li > a span.toggle {
-						background-color: rgba(0,0,0,.05);
-						border-radius: 3rem;
-						color: rgba(0,0,0,.25);
-						font-size: 0.75em;
-						font-weight: 500;
-						padding: 2px 8px;
-						text-transform: lowercase;	
-					}
-					
-					header nav > ul > li > a span.caret {
-                        display: none;
-					}
-                
-                    header > nav > ul > li:hover > a {
-                        color: rgb(140, 193, 193);  
-                    }
-                
-            header > nav > ul > li > nav {
-                background-color: rgb(51,51,51);
-                border-radius: 1.5em;
-                box-shadow: 0 2px 8px rgba(0,0,0,.6);
-                display: none;
-                overflow: hidden;
-                position: absolute;
-                right: 5%;
-                width: 90%;
-                z-index: 100;
-            }
-            
-                header > nav > ul > li > nav > ul > li > a {
-                    color: rgba(255,255,255,.85);
-                    transition: 300ms all ease;
-                }
-                
-                    header > nav > ul > li > nav > ul > li:hover > a {
-                        background-color: rgba(0,0,0,.6);
-                        color: rgba(255,255,255,1);
-                    }
-
-/* Medium screens */
-/* new stuff */
 
 #content {
   width: 920px;
@@ -300,11 +141,13 @@ dd {
   background-color: #0055DD; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 5px 5px;
+    border-radius:4px;
 }
 .SubmitButton:disabled,
 .SubmitButton[disabled]{
@@ -339,4 +182,49 @@ dd {
 }
 .alignright {
 	float: right;
+}
+.regionselect {
+    padding:3px;
+    border-radius:4px;
+    margin: 0;
+	    background: white;
+    color:black;
+	  font-size: 16px;
+}
+.IconButton {
+  background-color: white; 
+  border: none;
+  color: black;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor:pointer;
+}
+.LinkButton {
+  background-color: #0055DD; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+      border-radius:4px;
+
+}
+
+.CountryButton {
+  background-color: lightblue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+      height:125px;
+    width:150px;
+    border-radius:4px;
 }
